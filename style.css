@@ -35,7 +35,6 @@ h1{
     margin: 0px;
     text-align: center;
     line-height: 100px;
-    gap: 100px;
 }
 
 input{
@@ -47,7 +46,7 @@ input{
 
 .btn{
     position: relative;
-    padding: 20px 50px;
+    padding: 20px 30px;
     text-decoration: none;
     color: #fff;
     letter-spacing: 10px;
@@ -99,4 +98,12 @@ input{
     text-align: center;
     line-height: 100px;
     font-size: 30px
+}
+
+#resultados{
+    height: 100px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    line-height: 100px;
 }
