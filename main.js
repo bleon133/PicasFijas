@@ -12,6 +12,7 @@ const historial = document.getElementById('results')
 const cadenaUsuario = []
 const cadenaMaquina = []
 var flag = true
+var flag2 = false
 var numeros = []
 var picas = []
 var fijas = []
@@ -46,6 +47,13 @@ calcular.addEventListener('click',()=>{
         numeros.push((number1.value)+(number2.value)+(number3.value)+(number4.value))
         numeroPicas()
         numeroFijas()
+        number1.value = ''
+        number2.value = ''
+        number3.value = ''
+        number4.value = ''
+        if(flag2 == true){
+            alert('¡Ganaste!')
+        }
     } 
 })
 
@@ -59,9 +67,33 @@ function numeroAleatorios(){
 }
 
 function numeroPicas(){
-
+    let numPicas = 0
+    for(i=0; i<4; i++){
+        for(j=0; j<4; j++){
+            if(cadenaUsuario[i] == cadenaMaquina[j]){
+                numPicas += 1
+            }
+        }
+    }
+    picas.push(numPicas)
 }
 
 function numeroFijas(){
     let numFijas = 0
+    if(cadenaUsuario[0] == cadenaMaquina[0]){
+        numFijas += 1   
+    }
+    if(cadenaUsuario[1] == cadenaMaquina[1]){
+        numFijas += 1
+    }
+    if(cadenaUsuario[2] == cadenaMaquina[2]){
+        numFijas += 1
+    }
+    if(cadenaUsuario[3] == cadenaMaquina[3]){
+        numFijas += 1
+    }
+    fijas.push(numFijas)
+    if(numFijas == 4){
+        flag2 = true
+    }
 }
